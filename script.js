@@ -48,29 +48,7 @@ document.querySelectorAll('.service-card, .why-card').forEach((el, i) => {
   el.style.transitionDelay = `${(i % 3) * 80}ms`;
 });
 
-// Nhost config
-const NHOST_GRAPHQL_URL =
-  'https://vkqjlqnxtlgpmyqtirwk.hasura.us-east-1.nhost.run/v1/graphql';
-
-const INSERT_SUBMISSION = `
-  mutation InsertContactSubmission(
-    $name: String!
-    $email: String!
-    $project_type: String
-    $message: String!
-  ) {
-    insert_contact_submissions_one(object: {
-      name: $name
-      email: $email
-      project_type: $project_type
-      message: $message
-    }) {
-      id
-    }
-  }
-`;
-
-// Contact form — Nhost handler
+// Contact form — Web3Forms handler
 const form = document.getElementById('contactForm');
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -79,23 +57,19 @@ form.addEventListener('submit', async (e) => {
   btn.textContent = 'Sending...';
   btn.disabled = true;
 
-  const variables = {
-    name:         form.name.value.trim(),
-    email:        form.email.value.trim(),
-    project_type: form.project.value || null,
-    message:      form.message.value.trim(),
-  };
+  const body = new FormData();
+  body.append('access_key',   'd0a92a06-cfbe-4655-9c30-ff7f111a56e8');
+  body.append('subject',      'New Enquiry — RealAdaptivity');
+  body.append('name',         form.name.value.trim());
+  body.append('email',        form.email.value.trim());
+  body.append('project_type', form.project.value || 'Not specified');
+  body.append('message',      form.message.value.trim());
 
   try {
-    const res = await fetch(NHOST_GRAPHQL_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ query: INSERT_SUBMISSION, variables }),
-    });
+    const res  = await fetch('https://api.web3forms.com/submit', { method: 'POST', body });
+    const data = await res.json();
 
-    const { data, errors } = await res.json();
-
-    if (errors && errors.length) throw new Error(errors[0].message);
+    if (!data.success) throw new Error(data.message);
 
     form.innerHTML = `
       <div class="form-success">
