@@ -723,6 +723,110 @@ code .str { color: #c3e88d; }
 }
 
 /* =========================================
+   Portfolio
+   ========================================= */
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.portfolio-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition);
+}
+
+.portfolio-card:hover {
+  border-color: var(--border-glow);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+}
+
+/* Visual banner at the top of each card */
+.portfolio-visual {
+  position: relative;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.pv-timeclock  { background: linear-gradient(135deg, #0c2340 0%, #0e7490 100%); }
+.pv-washradar  { background: linear-gradient(135deg, #0a2e1a 0%, #059669 100%); }
+.pv-aurapay    { background: linear-gradient(135deg, #1e1040 0%, #7c3aed 100%); }
+.pv-lyra       { background: linear-gradient(135deg, #200d0d 0%, #dc2626 100%); }
+
+.pv-icon {
+  position: relative;
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+}
+
+.pv-icon svg {
+  width: 28px;
+  height: 28px;
+  color: #fff;
+}
+
+.pv-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 60% at 50% 120%, rgba(255,255,255,0.12) 0%, transparent 70%);
+}
+
+.portfolio-body {
+  padding: 28px;
+}
+
+.portfolio-meta {
+  margin-bottom: 8px;
+}
+
+.portfolio-client {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.portfolio-body h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.portfolio-body p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.portfolio-links {
+  margin-top: 20px;
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 13px;
+}
+
+/* =========================================
    CTA / Contact
    ========================================= */
 
@@ -930,8 +1034,9 @@ code .str { color: #c3e88d; }
    ========================================= */
 
 @media (max-width: 960px) {
-  .services-grid { grid-template-columns: 1fr 1fr; }
-  .why-grid      { grid-template-columns: 1fr 1fr; }
+  .services-grid   { grid-template-columns: 1fr 1fr; }
+  .why-grid        { grid-template-columns: 1fr 1fr; }
+  .portfolio-grid  { grid-template-columns: 1fr; }
   .about-grid    { grid-template-columns: 1fr; gap: 48px; }
   .process-steps { flex-direction: column; gap: 0; }
   .process-connector {

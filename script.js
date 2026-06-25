@@ -35,7 +35,7 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
 document.querySelectorAll(
-  '.service-card, .why-card, .process-step, .about-text, .about-visual'
+  '.service-card, .why-card, .process-step, .about-text, .about-visual, .portfolio-card'
 ).forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(24px)';
