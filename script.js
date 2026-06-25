@@ -35,7 +35,7 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
 document.querySelectorAll(
-  '.service-card, .why-card, .process-step, .about-text, .about-visual, .portfolio-card'
+  '.service-card, .why-card, .process-step, .about-text, .about-visual, .portfolio-card, .pricing-card, .faq-item'
 ).forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(24px)';
@@ -90,6 +90,27 @@ form.addEventListener('submit', async (e) => {
     errEl.textContent = 'Something went wrong — please try again or email us directly.';
     if (!form.querySelector('.form-error')) btn.insertAdjacentElement('afterend', errEl);
   }
+});
+
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item   = btn.parentElement;
+    const answer = item.querySelector('.faq-answer');
+    const isOpen = item.classList.contains('open');
+
+    document.querySelectorAll('.faq-item.open').forEach(open => {
+      open.classList.remove('open');
+      open.querySelector('.faq-answer').style.maxHeight = '0';
+      open.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
 });
 
 // Smooth scroll for anchor links
