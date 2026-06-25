@@ -923,6 +923,13 @@ code .str { color: #c3e88d; }
   margin-top: 16px;
 }
 
+.form-error {
+  text-align: center;
+  font-size: 13px;
+  color: #f87171;
+  margin-top: 12px;
+}
+
 /* Success state */
 .form-success {
   text-align: center;
