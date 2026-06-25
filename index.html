@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RealAdaptivity - Custom software development and freelancer company. We build software tailored to your exact needs." />
+  <title>RealAdaptivity | Custom Software Development</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <img src="logo.png" alt="RealAdaptivity" class="logo-img" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#why-us">Why Us</a></li>
+        <li><a href="#contact" class="btn btn-nav">Get a Quote</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#services" class="mobile-link">Services</a></li>
+      <li><a href="#process" class="mobile-link">Process</a></li>
+      <li><a href="#why-us" class="mobile-link">Why Us</a></li>
+      <li><a href="#contact" class="mobile-link">Get a Quote</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero -->
+  <header class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="container hero-content">
+      <div class="hero-badge">Innovate. Grow. Evolve.</div>
+      <h1 class="hero-title">
+        Software Built<br />
+        <span class="gradient-text">Exactly for You</span>
+      </h1>
+      <p class="hero-subtitle">
+        RealAdaptivity is a custom software development company and freelancer collective. We turn your ideas into powerful, scalable software — no templates, no compromises.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Start Your Project</a>
+        <a href="#services" class="btn btn-ghost">See What We Build</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Custom Built</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">Fast</span>
+          <span class="stat-label">Turnaround</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">You Own It</span>
+          <span class="stat-label">Full Source Code</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll to explore</span>
+      <div class="scroll-line"></div>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <div class="section-tag">About Us</div>
+          <h2 class="section-title">We Adapt to Every Project</h2>
+          <p class="about-body">
+            RealAdaptivity was founded on one core belief: software should fit the customer, not the other way around. We are a team of skilled developers and freelancers who specialize in building tailor-made digital solutions from the ground up.
+          </p>
+          <p class="about-body">
+            Whether you need a web app, a desktop tool, an automation script, or a full-stack platform — we listen, plan, and deliver exactly what your business requires. No bloat, no unnecessary features, no cookie-cutter templates.
+          </p>
+          <div class="about-pillars">
+            <div class="pillar">
+              <div class="pillar-icon">&#x2713;</div>
+              <div>
+                <strong>Customer-First Approach</strong>
+                <p>Your requirements drive every decision we make.</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon">&#x2713;</div>
+              <div>
+                <strong>Transparent Communication</strong>
+                <p>Regular updates, clear timelines, no surprises.</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon">&#x2713;</div>
+              <div>
+                <strong>Quality Code</strong>
+                <p>Clean, maintainable, and well-documented software.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual">
+          <div class="code-window">
+            <div class="code-window-bar">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <span class="code-window-title">solution.js</span>
+            </div>
+            <div class="code-body">
+              <pre><code><span class="kw">const</span> <span class="fn">buildForYou</span> = <span class="kw">async</span> (client) =&gt; {
+  <span class="kw">const</span> requirements = <span class="kw">await</span>
+    <span class="fn">gather</span>(client.needs);
+
+  <span class="kw">const</span> solution = <span class="kw">await</span>
+    <span class="fn">design</span>(requirements);
+
+  <span class="kw">return await</span> <span class="fn">deliver</span>({
+    solution,
+    quality: <span class="str">"production"</span>,
+    ownership: <span class="str">"client"</span>,
+    support: <span class="kw">true</span>
+  });
+};</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section section-dark" id="services">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">What We Build</div>
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">From solo freelance projects to full development teams, we cover every type of software your business might need.</p>
+      </div>
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <h3>Web Applications</h3>
+          <p>Full-stack web apps built with modern frameworks. From simple landing pages to complex SaaS platforms tailored to your workflow.</p>
+          <ul class="service-tags">
+            <li>React / Vue / Next.js</li>
+            <li>Node.js / Python</li>
+            <li>REST &amp; GraphQL APIs</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+          </div>
+          <h3>Mobile Apps</h3>
+          <p>Native and cross-platform mobile applications that work seamlessly on iOS and Android, designed around your users' real needs.</p>
+          <ul class="service-tags">
+            <li>React Native</li>
+            <li>Flutter</li>
+            <li>iOS &amp; Android</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg>
+          </div>
+          <h3>Desktop Software</h3>
+          <p>Cross-platform desktop applications for Windows, macOS, and Linux. Powerful tools that replace repetitive manual work.</p>
+          <ul class="service-tags">
+            <li>Electron</li>
+            <li>C# / .NET</li>
+            <li>Python GUI</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 0 0 4.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 0 1-15.357-2m15.357 2H15"/></svg>
+          </div>
+          <h3>Automation &amp; Scripting</h3>
+          <p>Save hours every week. We automate repetitive tasks, integrate disparate systems, and build bots that work while you sleep.</p>
+          <ul class="service-tags">
+            <li>Python / Bash</li>
+            <li>Workflow Automation</li>
+            <li>API Integrations</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          </div>
+          <h3>Databases &amp; Backend</h3>
+          <p>Scalable, secure database design and backend architecture. We build the infrastructure that powers your application reliably.</p>
+          <ul class="service-tags">
+            <li>PostgreSQL / MySQL</li>
+            <li>MongoDB</li>
+            <li>Cloud Infrastructure</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Freelance Consulting</h3>
+          <p>Bring in experienced developers as-needed. Perfect for startups and businesses that need skilled hands without full-time hiring.</p>
+          <ul class="service-tags">
+            <li>Code Reviews</li>
+            <li>Architecture Planning</li>
+            <li>Technical Advisory</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section" id="process">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">How We Work</div>
+        <h2 class="section-title">Our Process</h2>
+        <p class="section-subtitle">A simple, transparent workflow from first contact to final delivery.</p>
+      </div>
+      <div class="process-steps">
+
+        <div class="process-step">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3>Discovery Call</h3>
+            <p>We start by listening. You tell us your goals, challenges, and vision. We ask the right questions to fully understand what needs to be built.</p>
+          </div>
+        </div>
+
+        <div class="process-connector"></div>
+
+        <div class="process-step">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3>Proposal &amp; Planning</h3>
+            <p>We deliver a clear proposal: scope, timeline, cost breakdown, and tech stack. No hidden fees, no vague estimates.</p>
+          </div>
+        </div>
+
+        <div class="process-connector"></div>
+
+        <div class="process-step">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3>Design &amp; Build</h3>
+            <p>Our developers get to work. You receive regular progress updates and can provide feedback at every milestone.</p>
+          </div>
+        </div>
+
+        <div class="process-connector"></div>
+
+        <div class="process-step">
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <h3>Delivery &amp; Support</h3>
+            <p>We deliver production-ready code with full documentation. Post-launch support ensures everything runs smoothly.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us -->
+  <section class="section section-dark" id="why-us">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Why RealAdaptivity</div>
+        <h2 class="section-title">What Sets Us Apart</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">&#128275;</div>
+          <h3>You Own Everything</h3>
+          <p>All source code, assets, and intellectual property are yours. No vendor lock-in, ever.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">&#127919;</div>
+          <h3>Built to Your Spec</h3>
+          <p>We don't sell pre-made solutions. Every project is engineered from scratch to your exact requirements.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">&#9889;</div>
+          <h3>Agile &amp; Fast</h3>
+          <p>Small teams mean faster decisions, less bureaucracy, and quicker delivery without sacrificing quality.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">&#128222;</div>
+          <h3>Direct Access</h3>
+          <p>You communicate directly with the developers building your product — not account managers or middlemen.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">&#128200;</div>
+          <h3>Scalable Solutions</h3>
+          <p>We build with growth in mind. Your software will scale as your business grows, without expensive rewrites.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">&#128272;</div>
+          <h3>Secure by Default</h3>
+          <p>Security best practices are baked in from day one, not bolted on as an afterthought.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / Contact -->
+  <section class="section section-cta" id="contact">
+    <div class="container">
+      <div class="cta-content">
+        <div class="section-tag">Get Started</div>
+        <h2 class="section-title">Ready to Build Something?</h2>
+        <p class="cta-subtitle">Tell us about your project. We'll get back to you within 24 hours with a plan.</p>
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="jane@company.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="project">Project Type</label>
+            <select id="project" name="project">
+              <option value="" disabled selected>Select a service...</option>
+              <option value="web">Web Application</option>
+              <option value="mobile">Mobile App</option>
+              <option value="desktop">Desktop Software</option>
+              <option value="automation">Automation / Scripting</option>
+              <option value="backend">Database &amp; Backend</option>
+              <option value="consulting">Freelance Consulting</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Describe Your Project</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us what you need, what problems you're solving, and any tech preferences..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+          <p class="form-note">We respond within 24 hours. No spam, ever.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <img src="logo.png" alt="RealAdaptivity" class="logo-img logo-img-footer" />
+        </a>
+        <p>Custom software development &amp; freelancing. Built for you, owned by you.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#process">Our Process</a></li>
+            <li><a href="#why-us">Why Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Web Apps</a></li>
+            <li><a href="#services">Mobile Apps</a></li>
+            <li><a href="#services">Automation</a></li>
+            <li><a href="#services">Consulting</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="#contact">Get a Quote</a></li>
+            <li><a href="mailto:hello@realadaptivity.com">hello@realadaptivity.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 RealAdaptivity. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
