@@ -57,16 +57,21 @@ form.addEventListener('submit', async (e) => {
   btn.textContent = 'Sending...';
   btn.disabled = true;
 
-  const body = new FormData();
-  body.append('access_key',   'd0a92a06-cfbe-4655-9c30-ff7f111a56e8');
-  body.append('subject',      'New Enquiry — RealAdaptivity');
-  body.append('name',         form.name.value.trim());
-  body.append('email',        form.email.value.trim());
-  body.append('project_type', form.project.value || 'Not specified');
-  body.append('message',      form.message.value.trim());
+  const payload = {
+    access_key:   'd0a92a06-cfbe-4655-9c30-ff7f111a56e8',
+    subject:      'New Enquiry — RealAdaptivity',
+    name:         form.name.value.trim(),
+    email:        form.email.value.trim(),
+    project_type: form.project.value || 'Not specified',
+    message:      form.message.value.trim(),
+  };
 
   try {
-    const res  = await fetch('https://api.web3forms.com/submit', { method: 'POST', body });
+    const res  = await fetch('https://api.web3forms.com/submit', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body:    JSON.stringify(payload),
+    });
     const data = await res.json();
 
     if (!data.success) throw new Error(data.message);
