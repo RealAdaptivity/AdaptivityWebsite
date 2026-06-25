@@ -48,23 +48,48 @@ document.querySelectorAll('.service-card, .why-card').forEach((el, i) => {
   el.style.transitionDelay = `${(i % 3) * 80}ms`;
 });
 
-// Contact form — demo handler
+// Contact form — Web3Forms handler
 const form = document.getElementById('contactForm');
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
   const btn = form.querySelector('button[type="submit"]');
   btn.textContent = 'Sending...';
   btn.disabled = true;
 
-  setTimeout(() => {
+  const payload = {
+    access_key:   'd0a92a06-cfbe-4655-9c30-ff7f111a56e8',
+    subject:      'New Enquiry — RealAdaptivity',
+    name:         form.name.value.trim(),
+    email:        form.email.value.trim(),
+    project_type: form.project.value || 'Not specified',
+    message:      form.message.value.trim(),
+  };
+
+  try {
+    const res  = await fetch('https://api.web3forms.com/submit', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body:    JSON.stringify(payload),
+    });
+    const data = await res.json();
+
+    if (!data.success) throw new Error(data.message);
+
     form.innerHTML = `
       <div class="form-success">
         <h3>Message Sent!</h3>
         <p>Thanks for reaching out. We'll get back to you within 24 hours.</p>
       </div>
     `;
-  }, 1200);
+  } catch (err) {
+    btn.textContent = 'Send Message';
+    btn.disabled = false;
+    const errEl = form.querySelector('.form-error') || document.createElement('p');
+    errEl.className = 'form-error';
+    errEl.textContent = 'Something went wrong — please try again or email us directly.';
+    if (!form.querySelector('.form-error')) btn.insertAdjacentElement('afterend', errEl);
+  }
 });
 
 // Smooth scroll for anchor links
